@@ -1,0 +1,16 @@
+[
+  {
+    "id": "triage_mix_muell_inhalt_dublette",
+    "fixture": [
+      {"name": ".DS_Store", "inhalt": ""},
+      {"name": "neue-rechnung.txt", "inhalt": "Rechnung vom 2026-07-01, Betrag noch offen. Bitte begleichen."},
+      {"name": "schon-im-home.txt", "inhalt": "Dieser Inhalt liegt bereits identisch im PARA-Home."}
+    ],
+    "home": [
+      {"name": "vorhanden.txt", "inhalt": "Dieser Inhalt liegt bereits identisch im PARA-Home."}
+    ],
+    "erwartet_muell": 1,
+    "erwartet_inhalt": 1,
+    "erwartet_dublette": 1
+  }
+]

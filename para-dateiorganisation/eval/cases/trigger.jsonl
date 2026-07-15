@@ -1,0 +1,6 @@
+{"id": "pos_downloads_aufraeumen", "prompt": "Kannst du bitte meine Downloads aufraeumen?", "soll_triggern": true, "notiz": "Kern-Aufraeumwunsch"}
+{"id": "pos_duplikate_finden", "prompt": "Finde Duplikate in meinem Dokumente-Ordner.", "soll_triggern": true, "notiz": "Dedup-Wunsch"}
+{"id": "pos_struktur_bringen", "prompt": "Bring mal Struktur in diesen Ordner, das ist ein Chaos.", "soll_triggern": true, "notiz": "Organisationswunsch ohne PARA-Erwaehnung"}
+{"id": "neg_python_skript", "prompt": "Schreib mir ein Python-Skript, das die Fibonacci-Folge berechnet.", "soll_triggern": false, "notiz": "Coding-Aufgabe, kein Dateiorganisieren"}
+{"id": "neg_mails_loeschen", "prompt": "Loesch bitte alle Werbe-Mails in meinem Posteingang.", "soll_triggern": false, "notiz": "E-Mail, keine lokalen Dateien"}
+{"id": "neg_pdf_zusammenfassen", "prompt": "Fasse mir den Inhalt dieses PDFs inhaltlich zusammen.", "soll_triggern": false, "notiz": "Inhalts-Zusammenfassung, kein Umbenennen/Sortieren"}

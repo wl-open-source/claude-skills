@@ -1,0 +1,31 @@
+[
+  {
+    "id": "exakte_dublette",
+    "fixture": [
+      {"name": "vertrag.txt", "inhalt": "Identischer Vertragsinhalt zum Testen der exakten Duplikaterkennung."},
+      {"name": "vertrag-kopie.txt", "inhalt": "Identischer Vertragsinhalt zum Testen der exakten Duplikaterkennung."},
+      {"name": "anderes.txt", "inhalt": "Voellig anderer, einzigartiger Inhalt."}
+    ],
+    "erwartet_exakte_gruppen": 1,
+    "erwartet_behalten": "vertrag.txt"
+  },
+  {
+    "id": "near_duplicate_v1_v2",
+    "fixture": [
+      {"name": "vertrag_v1.txt", "inhalt": "Dies ist ein Vertragsentwurf ueber die Zusammenarbeit zwischen zwei Parteien. Die Laufzeit betraegt zwoelf Monate und verlaengert sich automatisch um weitere zwoelf Monate, sofern nicht rechtzeitig gekuendigt wird. Die Verguetung erfolgt monatlich zum Ersten des Monats."},
+      {"name": "vertrag_v2.txt", "inhalt": "Dies ist ein Vertragsentwurf ueber die Zusammenarbeit zwischen zwei Parteien. Die Laufzeit betraegt zwoelf Monate und verlaengert sich automatisch um weitere zwoelf Monate, sofern nicht rechtzeitig gekuendigt wird. Die Verguetung erfolgt vierteljaehrlich zum Ende des Monats."}
+    ],
+    "erwartet_near_gruppen": 1
+  },
+  {
+    "id": "quelle_schon_im_ziel_home",
+    "fixture": [
+      {"name": "schon-da.txt", "inhalt": "Inhaltsgleich zu einer Datei, die bereits im PARA-Home liegt."},
+      {"name": "wirklich-neu.txt", "inhalt": "Einzigartiger Inhalt, den es im Home noch nicht gibt."}
+    ],
+    "home": [
+      {"name": "bereits-vorhanden.txt", "inhalt": "Inhaltsgleich zu einer Datei, die bereits im PARA-Home liegt."}
+    ],
+    "erwartet_bereits_im_ziel": 1
+  }
+]

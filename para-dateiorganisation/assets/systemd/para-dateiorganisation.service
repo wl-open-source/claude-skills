@@ -1,0 +1,12 @@
+# systemd (user) service unit — führt einen einzelnen triage.py-Lauf aus.
+# Wird von para-dateiorganisation.path getriggert (nicht dauerhaft laufend).
+# Platzhalter (__PYTHON__, __SKILL_DIR__, __WATCH_DIR__, __PARA_HOME__) ersetzen.
+
+[Unit]
+Description=PARA-Dateiorganisation - Triage-Lauf
+
+[Service]
+Type=oneshot
+ExecStart=__PYTHON__ __SKILL_DIR__/scripts/triage.py __WATCH_DIR__ --apply --notify --manifest __PARA_HOME__/.para-manifest.jsonl --against-home __PARA_HOME__
+# Nur der eigene Durchgangsordner ist relevant; keine erhoehten Rechte noetig.
+Nice=10

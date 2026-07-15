@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  macOS launchd Wächter-Vorlage für die PARA-Dateiorganisation.
+  Platzhalter (__PYTHON__, __SKILL_DIR__, __WATCH_DIR__, __PARA_HOME__) ersetzen,
+  dann nach ~/Library/LaunchAgents/ kopieren und laden:
+      launchctl load ~/Library/LaunchAgents/com.para-dateiorganisation.watch.plist
+  WatchPaths startet den Job, sobald sich der Inhalt von __WATCH_DIR__ ändert.
+-->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.para-dateiorganisation.watch</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>__PYTHON__</string>
+        <string>__SKILL_DIR__/scripts/triage.py</string>
+        <string>__WATCH_DIR__</string>
+        <string>--apply</string>
+        <string>--notify</string>
+        <string>--manifest</string>
+        <string>__PARA_HOME__/.para-manifest.jsonl</string>
+        <string>--against-home</string>
+        <string>__PARA_HOME__</string>
+    </array>
+
+    <!-- Job läuft, wenn sich der überwachte Ordner ändert. -->
+    <key>WatchPaths</key>
+    <array>
+        <string>__WATCH_DIR__</string>
+    </array>
+
+    <!-- Nicht dauerhaft laufen lassen; nur bei Auslösung starten. -->
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>__PARA_HOME__/.para-triage.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>__PARA_HOME__/.para-triage.err.log</string>
+</dict>
+</plist>

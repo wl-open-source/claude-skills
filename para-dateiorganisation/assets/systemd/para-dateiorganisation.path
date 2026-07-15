@@ -1,0 +1,18 @@
+# systemd (user) path unit — überwacht __WATCH_DIR__ via inotify und startet
+# para-dateiorganisation.service, sobald sich der Ordner ändert.
+#
+# Platzhalter ersetzen, dann:
+#   cp para-dateiorganisation.path para-dateiorganisation.service ~/.config/systemd/user/
+#   systemctl --user daemon-reload
+#   systemctl --user enable --now para-dateiorganisation.path
+
+[Unit]
+Description=PARA-Dateiorganisation - Ordner-Waechter (Trigger)
+
+[Path]
+# Loest aus, wenn sich der Inhalt des ueberwachten Ordners aendert.
+PathChanged=__WATCH_DIR__
+Unit=para-dateiorganisation.service
+
+[Install]
+WantedBy=default.target
